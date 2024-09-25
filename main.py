@@ -1,4 +1,5 @@
 import numpy as np
+import random
 
 class Jeu:
     """
@@ -13,22 +14,23 @@ class Jeu:
         >>> 0 <= jeu.k <= 10
         True
         """
-        self.k = np.random.randint(m)
-        print(self.k)
+        self.k = random.randint(0,m)
         
     def test(self, k):
         """_summary_
 
         Args:
-            k (_type_): 
+            k : un nombre entier pour le tester avec self.k
 
         Returns:
             True : si le nombre k est self.k sont egaux
             False : sinon
         
         doc test 2:
+        >>> jeu = Jeu(10)
         >>> jeu.test(11)
-        FALSE 
+        Trop grand !
+        False
         """
         if self.k<k :
             print("Trop grand !")
@@ -40,6 +42,14 @@ class Jeu:
             print("Bravo, tu as gagné !")
             return True
         
+    def jouer(self):
+        """
+        Demande au joueur un nombre jusqu'à ce qu'il trouve le bon.
+        """
+        b = False
+        while not(b):
+            k = int(input("Entre un nombre :"))
+            b = self.test(k)
         
 if __name__ == "__main__":
     import doctest
@@ -47,3 +57,9 @@ if __name__ == "__main__":
     
     jeu = Jeu(10)
     jeu.test(11)
+    jeu.jouer()
+    
+    
+    
+   
+    
