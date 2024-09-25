@@ -5,9 +5,13 @@ class Jeu:
     """
     Jeu où le joueur doit deviner un nombre entre 0 et m tiré au hazard, en ayant n essais.
     """
-    def __init__(self, m):
+    def __init__(self, m, n):
         """
         Initialise le jeu avec un nombre tiré au hasard entre 0 et m donnée.
+        
+        args :
+            m : nombre entier pour difinir le nombre k 
+            n : nombre d'essais
         
         doc test :
         >>> jeu = Jeu(10)
