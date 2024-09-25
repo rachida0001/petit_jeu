@@ -6,7 +6,7 @@ class Jeu:
     """
     def __init__(self, m):
         """
-        Initialise le jeu avec un nombre tiré au hasard entre 0 et m.
+        Initialise le jeu avec un nombre tiré au hasard entre 0 et m donnée.
         
         doc test :
         >>> jeu = Jeu(10)
@@ -14,3 +14,9 @@ class Jeu:
         True
         """
         self.k = np.random.randint(m)
+        
+if __name__ == "__main__":
+    import doctest
+    doctest.testmod()
+    
+    jeu = Jeu(10)
