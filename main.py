@@ -1,4 +1,3 @@
-import numpy as np
 import random
 
 class Jeu:
@@ -14,7 +13,7 @@ class Jeu:
             n : nombre d'essais
         
         doc test :
-        >>> jeu = Jeu(10)
+        >>> jeu = Jeu(10,5)
         >>> 0 <= jeu.k <= 10
         True
         """
@@ -32,7 +31,7 @@ class Jeu:
             False : sinon
         
         doc test 2:
-        >>> jeu = Jeu(10)
+        >>> jeu = Jeu(10,5)
         >>> jeu.test(11)
         Trop grand !
         False
@@ -50,10 +49,13 @@ class Jeu:
         
     def jouer(self):
         """
-        Demande au joueur un nombre jusqu'à ce qu'il trouve le bon.
+        Demande au joueur un nombre jusqu'à ce qu'il trouve le bon si il deppasse les n essais il perde.
         """
         b = False
         while not(b):
+            if(self.n==0):
+                print("Tu as perdu !")
+                break
             k = int(input("Entre un nombre :"))
             b = self.test(k)
         
@@ -61,8 +63,8 @@ if __name__ == "__main__":
     import doctest
     doctest.testmod()
     
-    jeu = Jeu(10)
-    jeu.test(11)
+    jeu = Jeu(10,5)
+    #jeu.test(11)
     jeu.jouer()
     
     
