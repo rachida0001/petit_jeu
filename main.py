@@ -19,6 +19,7 @@ class Jeu:
         True
         """
         self.k = random.randint(0,m)
+        self.n = n
         
     def test(self, k):
         """_summary_
@@ -36,6 +37,7 @@ class Jeu:
         Trop grand !
         False
         """
+        self.n -=1
         if self.k<k :
             print("Trop grand !")
             return False
