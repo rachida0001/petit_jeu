@@ -14,9 +14,36 @@ class Jeu:
         True
         """
         self.k = np.random.randint(m)
+        print(self.k)
+        
+    def test(self, k):
+        """_summary_
+
+        Args:
+            k (_type_): 
+
+        Returns:
+            True : si le nombre k est self.k sont egaux
+            False : sinon
+        
+        doc test 2:
+        >>> jeu.test(11)
+        FALSE 
+        """
+        if self.k<k :
+            print("Trop grand !")
+            return False
+        elif(self.k>k):
+            print("Trop petit !")
+            return False
+        else:
+            print("Bravo, tu as gagné !")
+            return True
+        
         
 if __name__ == "__main__":
     import doctest
     doctest.testmod()
     
     jeu = Jeu(10)
+    jeu.test(11)
