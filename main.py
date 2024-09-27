@@ -1,4 +1,3 @@
-import numpy as np
 import random
 
 class Jeu:
@@ -17,8 +16,7 @@ class Jeu:
         self.k = random.randint(0,m)
         
     def test(self, k):
-        """_summary_
-
+        """
         Args:
             k : un nombre entier pour le tester avec self.k
 
@@ -58,8 +56,3 @@ if __name__ == "__main__":
     jeu = Jeu(10)
     jeu.test(11)
     jeu.jouer()
-    
-    
-    
-   
-    
