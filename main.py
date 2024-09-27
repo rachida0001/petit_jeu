@@ -56,7 +56,10 @@ class Jeu:
             if(self.n==0):
                 print("Tu as perdu !")
                 break
-            k = int(input("Entre un nombre :"))
+            try :  
+                k = int(input("Entre un nombre :"))
+            except :
+                print("Ceci n’est pas un entier !")  
             b = self.test(k)
         
 if __name__ == "__main__":
