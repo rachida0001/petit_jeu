@@ -58,7 +58,7 @@ class Jeu:
                 break
             try :  
                 k = int(input("Entre un nombre :"))
-            except :
+            except ValueError:
                 print("Ceci n’est pas un entier !")  
             b = self.test(k)
         
