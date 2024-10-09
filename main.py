@@ -66,6 +66,12 @@ if __name__ == "__main__":
     import doctest
     doctest.testmod()
     
-    jeu = Jeu(10,5)
     #jeu.test(11)
-    jeu.jouer()
+    
+    try:
+        m = int(input("Entrez le nombre maximum : "))
+        n = 5 
+        jeu = Jeu(m, n)
+        jeu.jouer()
+    except ValueError:
+        print("Le nombre maximum doit être un entier.")
