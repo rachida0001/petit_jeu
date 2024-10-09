@@ -1,4 +1,5 @@
 import random
+import sys
 
 class Jeu:
     """
@@ -56,6 +57,7 @@ class Jeu:
             if(self.n==0):
                 print("Tu as perdu !")
                 break
+            print("e nombre d’essais restants = ", self.n)
             try :  
                 k = int(input("Entre un nombre :"))
             except ValueError:
@@ -66,10 +68,19 @@ if __name__ == "__main__":
     import doctest
     doctest.testmod()
     
-    jeu = Jeu(10,5)
     #jeu.test(11)
-    jeu.jouer()
     
+    if len(sys.argv) != 2:
+        print("Veuillez fournir le nombre maximum à deviner en argument.")
+        sys.exit(1)
+
+    try:
+        m = int(sys.argv[1])
+        n = 5
+        jeu = Jeu(m, n)
+        jeu.jouer()
+    except ValueError:
+        print("Le nombre maximum doit être un entier.")
     
     
    
