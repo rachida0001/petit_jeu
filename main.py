@@ -55,6 +55,7 @@ class Jeu:
             if(self.n==0):
                 print("Tu as perdu !")
                 break
+            print("e nombre d’essais restants = ",self.n)
             try :  
                 k = int(input("Entre un nombre :"))
             except ValueError:
